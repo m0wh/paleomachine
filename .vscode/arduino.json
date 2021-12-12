@@ -1,0 +1,6 @@
+{
+    "sketch": "midi.ino",
+    "board": "arduino:avr:mega",
+    "port": "/dev/cu.usbmodem14201",
+    "configuration": "cpu=atmega2560"
+}
