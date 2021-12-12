@@ -27,9 +27,9 @@ void checkEncoders () {
     if (encVals[i] != lastEncVals[i]) {
       if (millis() - encodersLastCheck > 50 ) {
         if (digitalRead(ENC_PINS[i][1]) != lastEncVals[i]) {
-          MIDImessage(128 + ENC_PINS[i][3], ENC_PINS[i][2], 0);
+          MIDINoteOff(ENC_PINS[i][3], ENC_PINS[i][2]);
         } else {
-          MIDImessage(144 + ENC_PINS[i][3], ENC_PINS[i][2], 127);
+          MIDINoteOn(ENC_PINS[i][3], ENC_PINS[i][2]);
         }
 
         encodersLastCheck = millis();

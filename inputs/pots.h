@@ -26,8 +26,8 @@ void checkPots () {
       potVals[i] = analogRead(POT_PINS[i][0]);
 
       if (abs(potVals[i] - potLastVals[i]) > threshold) {
-        MIDImessage(
-          176 + POT_PINS[i][2],
+        MIDIControlChange(
+          POT_PINS[i][2],
           20 + POT_PINS[i][1],
           map(potVals[i], 0, 1023, 0, 127) // map sensor range to MIDI range
         );

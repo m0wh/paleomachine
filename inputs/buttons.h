@@ -28,10 +28,10 @@ void checkButtons () {
 
       if (btnVals[i] != btnLastVals[i]) {
         if (btnVals[i] == LOW) { // note on
-          MIDImessage(144 + BTN_PINS[i][2], BTN_PINS[i][1], 127);
+          MIDINoteOn(BTN_PINS[i][2], BTN_PINS[i][1]);
           btnLastVals[i] = btnVals[i];
         } else { // note off
-          MIDImessage(128 + BTN_PINS[i][2], BTN_PINS[i][1], 0);
+          MIDINoteOff(BTN_PINS[i][2], BTN_PINS[i][1]);
           btnLastVals[i] = btnVals[i];
         }
       }
