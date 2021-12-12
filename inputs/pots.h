@@ -18,18 +18,24 @@ void setupPots () {
   }
 }
 
+int potsLastCheck = 0;
+
 void checkPots () {
-  for (int i = 0; i < POT_PINS_LENGTH; i++) {
-    potVals[i] = analogRead(POT_PINS[i][0]);
+  if (millis() >= potsLastCheck + 4) {
+    for (int i = 0; i < POT_PINS_LENGTH; i++) {
+      potVals[i] = analogRead(POT_PINS[i][0]);
 
-    if (abs(potVals[i] - potLastVals[i]) > threshold) {
-      MIDImessage(
-        176 + POT_PINS[i][2],
-        20 + POT_PINS[i][1],
-        map(potVals[i], 0, 1023, 0, 127) // map sensor range to MIDI range
-      );
+      if (abs(potVals[i] - potLastVals[i]) > threshold) {
+        MIDImessage(
+          176 + POT_PINS[i][2],
+          20 + POT_PINS[i][1],
+          map(potVals[i], 0, 1023, 0, 127) // map sensor range to MIDI range
+        );
 
-      potLastVals[i] = potVals[i]; // reset old value with new reading
+        potLastVals[i] = potVals[i]; // reset old value with new reading
+      }
     }
+
+    potsLastCheck = millis();
   }
 }

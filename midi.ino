@@ -19,16 +19,9 @@ void setup () {
   setupLeds();
 }
 
-int lastMillis = 0;
-
 void loop () {
   checkMIDI();
-
-  if (millis() >= lastMillis + 10) {
-    checkPots();
-    checkButtons();
-    checkEncoders();
-
-    lastMillis = millis();
-  }
+  checkPots();
+  checkButtons();
+  checkEncoders();
 }
