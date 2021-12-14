@@ -1,11 +1,12 @@
 
-const int BTN_PINS_LENGTH = 4;
+const int BTN_PINS_LENGTH = 5;
 // pin, note, channel
 const int BTN_PINS[BTN_PINS_LENGTH][3] = {
   {2, 0, 0}, // btn 1
   {3, 1, 0}, // btn 2
   {4, 2, 0}, // enc 1
   {5, 3, 0}, // enc 2
+  {6, 6, 0}, // joystick
 };
 
 int btnVals[BTN_PINS_LENGTH];

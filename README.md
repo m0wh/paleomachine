@@ -16,3 +16,7 @@
 | 1 | Note off | 5 | Encoder 2 - |
 | 1 | Control change | 20 | Potentiometer 1 |
 | 1 | Control change | 21 | Potentiometer 2 |
+| 1 | Control change | 22 | Joystick X |
+| 1 | Control change | 23 | Joystick Y |
+| 1 | Note on | 6 | Joystick pressed |
+| 1 | Note off | 6 | Joystick released |

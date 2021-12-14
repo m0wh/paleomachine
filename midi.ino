@@ -2,6 +2,7 @@
 #include "midi/midiout.h"
 
 #include "outputs/leds.h"
+#include "outputs/matrix.h"
 
 #include "inputs/buttons.h"
 #include "inputs/pots.h"
@@ -17,6 +18,7 @@ void setup () {
   setupEncoders();
 
   setupLeds();
+  setupMatrix();
 }
 
 void loop () {
@@ -24,4 +26,5 @@ void loop () {
   checkPots();
   checkButtons();
   checkEncoders();
+  loopMatrix();
 }
